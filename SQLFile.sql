@@ -1,0 +1,10 @@
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'Omsri@9009';
+GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost';
+FLUSH PRIVILEGES;
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'username'@'localhost';
+FLUSH PRIVILEGES;
+GRANT SELECT,INSERT,UPDATE ON student.student_data TO 'username'@'localhost';
+GRANT SELECT,INSERT,UPDATE ON student.employee TO 'username'@'localhost';
+GRANT SELECT ON student.student_data TO 'username'@'localhost';
+REVOKE INSERT ON student.student_data FROM 'username'@'localhost';
+REVOKE SELECT ON student.student_data FROM 'username'@'localhost';
